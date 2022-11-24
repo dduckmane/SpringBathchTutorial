@@ -1,0 +1,21 @@
+
+
+spring:
+  batch:
+    job:
+#      names: helloWorldJob
+      names: ${job.name:NONE} # job이 실행될시 job이름을 파라미터로 넘기기 위해 설정
+      enabled: false # 잡에 대한 파라미터가 존재하더라도 구동을 안시키고 스케줄러를 통해 실행
+    jdbc:
+      initialize-schema: always
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/security?serverTimezone=Asia/Seoul
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: cos
+    password: cos1234
+
+  jpa:
+    show-sql: true
+
+
